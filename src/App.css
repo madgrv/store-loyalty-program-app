@@ -1,0 +1,187 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:#4d4d4d;
+}
+
+body {
+  /* background: linear-gradient(to bottom, rgb(221, 221, 221) 80%, rgb(70, 62, 70) 98%, rgb(60, 10, 101)) no-repeat; */
+}
+
+input, textarea {
+  margin: 10px;
+  height: 20px;
+  text-indent: 10px;
+  border: 2px solid #8400ff5b;
+  border-radius: 4px;
+}
+
+fieldset {
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid #8400ff90;
+  padding: 22px;
+}
+
+legend {
+  padding: 20px;
+  color: #8400ff;
+  font-weight: 600;
+}
+
+.header {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 10px 80px 10px 80px;
+  background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%);
+  box-shadow: 0 10px 20px 0 rgb(106, 0, 255), 0 15px 20px 0 rgb(144, 0, 255), 0 3px 10px 0 rgb(0, 255, 187);
+  /* adds multiple shadows */
+
+}
+
+.header-title {
+  text-align: left;
+
+}
+
+.nav {
+  align-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-content: center;
+  justify-content:center;
+  list-style-type: none;
+  gap: 20px;
+  border-left: solid 2px white;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.nav-menu > li {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: #010101;
+  box-shadow: 0 1px 18px rgb(130, 0, 251);
+  padding: 20px;
+  border-radius: 4px;
+  transition: 0.1s;
+}
+
+.logout-button:hover {
+  background-color: #1f1f1f;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 60px;
+  max-width: 600px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  gap: 10px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  align-self: center;
+}
+
+.form select {
+  width: 30%;
+  height: 25px;
+  margin-right: 12px;
+  align-self: center;
+  border: 2px solid #8400ff5b;
+}
+
+label {
+  align-self: center;
+  justify-self: center;
+}
+
+.form-button {
+  margin-top: 30px;
+  width: 97%;
+  height: 30px;
+  align-self: center;
+  border: none;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 16px;
+  background: linear-gradient(to right, #8400ff 0%, #3d0077 85%, #0d002e 100%);
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0 15px 25px #540b99c2;
+}
+
+.form-button:hover {
+  background: linear-gradient(to right, #8400ff 60%, #3d0077 100%);
+  cursor: pointer;
+  /* box-shadow: 0 15px 25px 0 rgb(106, 0, 255), 0 35px 45px 0 rgb(144, 0, 255), 0 5px 12px 0 rgb(0, 255, 187); */
+  box-shadow: 0 25px 35px 0 rgb(106, 0, 255), 0 45px 55px 0 rgb(144, 0, 255), 0 15px 22px 0 rgb(0, 255, 187);
+  transform: translateY(-2px);
+}
+
+.form-button:active {
+  transform: perspective(5);
+  box-shadow: 0 10px 20px 0 rgb(106, 0, 255), 0 30px 40px 0 rgb(144, 0, 255), 0 3px 10px 0 rgb(0, 255, 187);
+
+}
