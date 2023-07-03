@@ -1,4 +1,5 @@
 import React from "react"
+import styles from '../styles/form.module.css'
 
 export default function Form() {
     const [formData, setFormData] = React.useState(
@@ -47,10 +48,10 @@ export default function Form() {
       }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form className={styles.formDataObject} onSubmit={handleSubmit}>
             <fieldset>
-                <legend className="legend">Customer details</legend>
-                <div className="form-row">
+                <legend className={styles.legend}>Customer details</legend>
+                <div className={styles.formRow}>
                     <input
                         type="text"
                         placeholder="First Name"
@@ -68,7 +69,7 @@ export default function Form() {
                         required
                     />
                 </div>
-                <div className="form-row">    
+                <div className={styles.formRow}>    
                     <input
                         type="email"
                         placeholder="Email"
@@ -87,8 +88,8 @@ export default function Form() {
                 </div>
             </fieldset>
             <fieldset>
-                <legend className="legend">Book info</legend>
-                <div className="form-row">    
+                <legend className={styles.legend}>Book info</legend>
+                <div className={styles.formRow}>    
                     <input
                         type="text"
                         placeholder="Last book bought"
@@ -112,7 +113,7 @@ export default function Form() {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <div className="form-row">
+                <div className={styles.formRow}>
                     <input
                         type="text"
                         placeholder="Book of choice"
@@ -122,7 +123,7 @@ export default function Form() {
                         required
                     />
                 </div>
-                <div className="form-row">
+                <div className={styles.formRow}>
                     <textarea 
                         rows="4"
                         placeholder="Add your comments here"
@@ -132,7 +133,7 @@ export default function Form() {
                     />
                 </div>
             </fieldset>
-            <button type="submit" className="form-button">Submit</button>
+            <button type="submit" className={styles.formButton}>Submit</button>
         </form>
     )
 }

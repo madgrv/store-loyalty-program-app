@@ -1,19 +1,14 @@
-import style from '../styles/header.module.css'
+import styles from '../styles/header.module.css'
+import Nav from './Nav'
 
 export default function Header() {
 
     return(
-        <header className="header">
-            <div className="header-title">
+        <header className={styles.header}>
+            <div className={styles.headerTitle}>
                 <h1>BooX - Loyalty Program</h1>
             </div>
-            <nav className="nav">
-                <ul className="nav-menu">
-                    <li>Home</li>
-                    <li>Back</li>
-                    <li className="logout-button">Logout</li>
-                </ul>
-            </nav>
+            <Nav />
         </header>
     )
 }
