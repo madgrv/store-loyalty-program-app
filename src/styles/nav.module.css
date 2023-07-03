@@ -19,14 +19,15 @@
     cursor: pointer;
   }
   
-  .logoutButton {
+  .loginButton {
     background-color: #010101;
     box-shadow: 0 1px 18px rgb(130, 0, 251);
     padding: 20px;
     border-radius: 4px;
     transition: 0.1s;
+    min-width: 50px;
   }
   
-  .logoutButton:hover {
+  .loginButton:hover {
     background-color: #1f1f1f;
   }
