@@ -2,15 +2,21 @@ import React from "react"
 import styles from '../styles/form.module.css'
 
 export default function Form() {
+    // create empty array to store form object data
+    const [dataList, setDataList] = React.useState([]);
+    // Set initial form state
     const [formData, setFormData] = React.useState(
-        {firstName: "",
-         lastName: "",
-         email: "",
-         phone: "",
-         bookBought: "",
-         bookOfChoice: "",
-         comments: "",
-         starRating: ""}
+        {
+            id: "",
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            bookBought: "",
+            bookOfChoice: "",
+            comments: "",
+            starRating: ""
+        }
     )
     
     console.log(formData) // for testing
@@ -31,20 +37,39 @@ export default function Form() {
     
         // Create the object with form data
         const formDataObject = {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          bookBought: formData.bookBought,
-          bookOfChoice: formData.bookOfChoice,
-          comments: formData.comments,
-          starRating: formData.starRating
+            id: Date.now(), // Use the timestamp as the ID/key
+            firstName: event.target.elements.firstName.value,
+            lastName: event.target.elements.lastName.value,
+            email: event.target.elements.email.value,
+            phone: event.target.elements.phone.value,
+            bookBought: event.target.elements.bookBought.value,
+            bookOfChoice: event.target.elements.bookOfChoice.value,
+            comments: event.target.elements.comments.value,
+            starRating: event.target.elements.starRating.value
         };
     
         // Send the formDataObject to the API
         // You can use fetch or any other library for making API requests
     
-        console.log(formDataObject); // For testing purposes
+        // console.log(formDataObject); // For testing purposes
+
+        // Add the new data to the array
+        setDataList([...dataList, formDataObject]);
+        window.alert("Submitted successfully")
+
+        console.log(dataList)
+
+        // Reset the form input fields by updating the state
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            bookBought: '',
+            bookOfChoice: '',
+            comments: '',
+            starRating: '',
+        });
       }
 
     return (
