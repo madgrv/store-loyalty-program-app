@@ -28,7 +28,7 @@ input, textarea {
     flex-direction: column;
     margin: auto;
     margin-top: 60px;
-    max-width: 600px;
+    max-width: 400px;
   }
   
   .formRow {
