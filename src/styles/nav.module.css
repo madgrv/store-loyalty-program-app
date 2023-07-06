@@ -1,33 +1,63 @@
 /* nav.module.css */
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .nav {
-    align-content: center;
-  }
-  
-  .navMenu {
-    display: flex;
-    align-content: center;
-    justify-content:center;
-    list-style-type: none;
-    gap: 20px;
-    border-left: solid 2px white;
-    height: 100%;
-    flex-grow: 1;
-  }
-  
-  .navMenu > li {
-    padding: 20px;
-    cursor: pointer;
-  }
-  
-  .loginButton {
-    background-color: #010101;
-    box-shadow: 0 1px 18px rgb(130, 0, 251);
-    padding: 20px;
-    border-radius: 4px;
-    transition: 0.1s;
-    min-width: 50px;
-  }
-  
-  .loginButton:hover {
-    background-color: #1f1f1f;
-  }
+  align-content: center;
+}
+
+.navMenu {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20px;
+  border-left: solid 2px white;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.navMenu > li {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: #010101;
+  box-shadow: 0 1px 18px rgb(130, 0, 251);
+  padding: 20px;
+  border-radius: 4px;
+  transition: 0.1s;
+  min-width: 55px;
+}
+
+.loginButton:hover {
+  background-color: #1f1f1f;
+}
+
+.loginFormWrapper {
+  position: absolute;
+  margin: 90px 50px;
+}
+
+.userWelcome {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 20px;
+}
+
+/* .loginFormContainer {
+  width: 10.5em;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 2px solid #39009b;
+  box-sizing: border-box;
+  color: #3faffa;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1em;
+} */
+
