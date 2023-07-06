@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Styles from '../styles/loginForm.module.css';
+// import axios from 'axios';
 
 
 export default function LoginFormI({handleLogin}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -17,30 +19,63 @@ export default function LoginFormI({handleLogin}) {
         handleLogin(userInfo);    
     }
 
+
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
+    
+    const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    };
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validate form input
+        if (!username || !password) {
+            setError('Please fill in all fields.');
+            return;
+        }
+
+         // Perform login request
+    // axios
+    // .post('/api/login', { username, password })
+    // .then((response) => {
+    //   // Handle login success
+    //   console.log('Logged in successfully!');
+    // })
+    // .catch((error) => {
+    //   // Handle login failure
+    //   console.error('Login failed:', error);
+    // });
+};
+
+
     return(
         <div className={Styles.loginFormContainer}>
-            <form className={Styles.loginForm}>
+            <form className={Styles.loginForm} onSubmit={handleSubmit}>
                 <fieldset className={Styles.loginFieldset}>
                     <div className={Styles.inputField}>
                         {/* <label>User:</label> */}
                         <input 
                             className={Styles.input} 
-                            type='text' 
+                            type='text'
+                            id='username'
                             placeholder='User name'
                             value={username}
                             required
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
+                            onChange={handleUsernameChange}                        />
                     </div>
                     <div className={Styles.inputField}>
                         {/* <label>Password:</label> */}
                         <input 
                             className={Styles.input} 
                             type='password' 
+                            id='password'
                             placeholder='Password'
                             value={password}
                             required
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={handlePasswordChange}
                         />
                     </div>
                     <button className={Styles.button} onClick={handleClick}>Login</button>

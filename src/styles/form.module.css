@@ -15,12 +15,12 @@ input, textarea {
     padding: 10px;
     margin: 10px;
     border: 3px solid #8400ff90;
-    padding: 22px;
+    /* padding: 22px; */
     font-size: 16px;
   }
   
   legend {
-    padding: 20px;
+    /* padding: 20px; */
     color: #8400ff;
     font-weight: 600;
     font-size: 16px;
