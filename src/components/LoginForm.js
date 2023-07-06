@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Styles from '../styles/loginForm.module.css';
-// import axios from 'axios';
 
 
 export default function LoginFormI({handleLogin}) {
@@ -37,17 +36,6 @@ export default function LoginFormI({handleLogin}) {
             return;
         }
 
-         // Perform login request
-    // axios
-    // .post('/api/login', { username, password })
-    // .then((response) => {
-    //   // Handle login success
-    //   console.log('Logged in successfully!');
-    // })
-    // .catch((error) => {
-    //   // Handle login failure
-    //   console.error('Login failed:', error);
-    // });
 };
 
 

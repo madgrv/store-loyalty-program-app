@@ -5,7 +5,6 @@ export default function CustomersTable() {
   const data = [
     { id: 1, name: 'John Doe', email: 'john@example.com' },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-    // ... other customer data
   ];
 
   return (

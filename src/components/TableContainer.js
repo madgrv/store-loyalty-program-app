@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomersTable from "./CustomersTable"
-const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
 const TableContainer = ({ data }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   return (
     <div>
         {isLoggedIn && <CustomersTable />}
