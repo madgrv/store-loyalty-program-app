@@ -36,7 +36,15 @@ export default function LoginFormI({handleLogin}) {
             return;
         }
 
-};
+        const userInfo = {
+            username,
+            password
+        };
+    
+        handleLogin(userInfo);
+
+    };
+
 
 
     return(
