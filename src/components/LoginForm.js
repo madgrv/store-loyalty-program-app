@@ -66,7 +66,7 @@ export default function LoginFormI({handleLogin}) {
                             onChange={handlePasswordChange}
                         />
                     </div>
-                    <button className={Styles.button} onClick={handleClick}>Login</button>
+                    <button className={Styles.button}>Login</button>
                 </fieldset>
             </form>
         </div>
