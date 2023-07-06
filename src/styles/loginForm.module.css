@@ -35,7 +35,8 @@
   border: solid 2px rgba(106, 0, 255);
   /* border: none; */
   border-radius: 4px;
-  background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%);
+  /* background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%); */
+  background: linear-gradient(to right, #8400ff 0%, #3d0077 85%, #0d002e 100%);
   color: #ffffff;
   font-weight: 500;
   font-size: 16px;

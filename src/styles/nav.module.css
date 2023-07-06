@@ -40,24 +40,12 @@
 
 .loginFormWrapper {
   position: absolute;
-  margin: 90px 50px;
+  margin: 90px -50px;
 }
 
 .userWelcome {
-  position: absolute;
-  margin-top: 90px;
-  margin-left: 20px;
-}
 
-/* .loginFormContainer {
-  width: 10.5em;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 2px solid #39009b;
-  box-sizing: border-box;
-  color: #3faffa;
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: 1em;
-} */
+  margin: 15px 25px auto 20px;
+  align-self: center;
+}
 

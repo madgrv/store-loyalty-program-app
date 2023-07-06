@@ -29,8 +29,12 @@ export default function Nav() {
         <div className={styles.navContainer}>
             <nav className={styles.nav}>
                 <ul className={styles.navMenu}>
-                    <li>Home</li>
-                    <li>Back</li>
+                    {isLoggedIn ? <p className={styles.userWelcome}>Welcome, {userName}</p>
+                        :
+                        <p className={styles.userWelcome}>Please login</p>
+                    }
+                    {/* <li>Home</li>
+                    <li>Back</li> */}
                     { isLoggedIn ? 
                         <li className={styles.loginButton} onClick={handleLogout}>Logout</li>
                         :
@@ -38,10 +42,6 @@ export default function Nav() {
                     }
                 </ul>
             </nav>
-            {isLoggedIn ? <p className={styles.userWelcome}>Welcome, {userName}</p>
-                :
-                <p className={styles.userWelcome}>Please login</p>
-            }
             {
                 isOpen && (
                     <div className={styles.loginFormWrapper}>

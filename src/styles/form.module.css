@@ -43,6 +43,7 @@ input, textarea {
   
   .form input,
   .form textarea {
+    /* padding-top: 14px; */
     width: 100%;
     align-self: center;
   }
@@ -52,9 +53,8 @@ input, textarea {
   }
   
   .form select {
-    width: 30%;
+    width: 20%;
     height: 48px;
-    margin-right: 12px;
     align-self: center;
     border: 2px solid #8400ff5b;
     font-size: 16px;

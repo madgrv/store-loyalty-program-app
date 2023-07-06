@@ -28,6 +28,7 @@ export default function LoginFormI({handleLogin}) {
                             type='text' 
                             placeholder='User name'
                             value={username}
+                            required
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
@@ -38,6 +39,7 @@ export default function LoginFormI({handleLogin}) {
                             type='password' 
                             placeholder='Password'
                             value={password}
+                            required
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
