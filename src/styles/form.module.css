@@ -36,8 +36,6 @@ input, textarea {
     margin: auto;
     margin-top: 30px;
     max-width: 600px;
-    /* box-shadow: 0 15px 25px #540b99c2;
-    border-radius: 4px; */
     padding: 40px;
   }
   
@@ -51,7 +49,6 @@ input, textarea {
   
   .form input,
   .form textarea {
-    /* padding-top: 14px; */
     width: 100%;
     align-self: center;
   }
