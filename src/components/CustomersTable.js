@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from '../styles/customersTable.module.css';
+import data from '../Data.json';
+
+
 
 export default function CustomersTable() {
-  const data = [
-    { id: 1, name: 'John Doe', email: 'john@example.com' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-  ];
+
 
   return (
     <div className={styles.customersTable}>
@@ -22,7 +22,7 @@ export default function CustomersTable() {
           {data.map((customer) => (
             <tr key={customer.id}>
               <td>{customer.id}</td>
-              <td>{customer.name}</td>
+              <td>{`${customer.firstName} ${customer.lastName}`}</td>
               <td>{customer.email}</td>
             </tr>
           ))}

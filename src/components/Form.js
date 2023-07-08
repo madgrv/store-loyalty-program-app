@@ -51,8 +51,8 @@ export default function Form() {
         // Send the formDataObject to the API
         // You can use fetch or any other library for making API requests
     
-        // console.log(formDataObject); // For testing purposes
-
+        // console.log(formDataObject);
+        
         // Add the new data to the array
         setDataList([...dataList, formDataObject]);
         window.alert("Submitted successfully")

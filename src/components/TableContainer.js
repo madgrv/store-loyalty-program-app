@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styles from '../styles/tableContainer.module.css'
 import CustomersTable from "./CustomersTable"
 
 
-const TableContainer = ({ data }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+const TableContainer = () => {
   return (
-    <div>
-        {isLoggedIn && <CustomersTable />}
+<div className={styles.tableContainer}>
+      <CustomersTable />
+        {/* {isLoggedIn && <CustomersTable />} */}
     </div>
   );
 };
