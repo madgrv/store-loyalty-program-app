@@ -1,8 +1,9 @@
 /*  from.module.css */
 
-@media (width: 600px) {
+@media (min-width: 600px) {
   .formRow {
-    width: 50%;
+    width: 100%;
+    flex-wrap: wrap;
   }
 }
 
@@ -42,7 +43,7 @@ input, textarea {
   .formRow {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex: 1 1 auto;
     gap: 10px;
   }

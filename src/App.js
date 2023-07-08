@@ -2,6 +2,7 @@ import './App.css';
 import Form from './components/Form';
 import Header from './components/Header';
 import TableContainer from './components/TableContainer';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Header />
       <Form />
       <br />
-      <TableContainer />
+      {/* <TableContainer /> */}
+      <Footer />
     </div>
   );
 }

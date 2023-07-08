@@ -15,7 +15,7 @@
   justify-content: center;
   list-style-type: none;
   gap: 20px;
-  border-left: solid 2px white;
+  /* border-left: solid 2px white; */
   height: 100%;
   flex-grow: 1;
 }
