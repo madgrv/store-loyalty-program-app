@@ -1,4 +1,5 @@
 
+
 .loginFormContainer {
   width: 100%;
   margin-right: auto;
@@ -8,25 +9,31 @@
   border: none;
 }
 
-.loginForm {
+/* .loginForm {
   padding: 0;
   margin: 0;
   background: #ffffff;
-  /* opacity: 0.8; */
   border: 3px solid rgba(106, 0, 255, 0.566);
   border-radius: 5px;
-  /* box-sizing: border-box; */
   color: #6b6b6b;
   font-size: 0.8rem;
   font-weight: 500;
   box-shadow: 0 14px 20px 0 rgba(106, 0, 255, 0.287);
+} */
 
+.loginForm {
+  background-color: rgba(255, 255, 255, 0.309);
+  backdrop-filter: blur(22px);
+  color: #6b6b6b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 5px;
+  box-shadow: 0 14px 25px 5px rgba(106, 0, 255, 0.377);
 }
 
 .inputField {
   display: flex;
-  align-content:space-between;
-  min-width: 300px;
+  align-self: center;
 }
 
 .button {
@@ -34,9 +41,7 @@
   height: 40px;
   margin: 8px 0 0 0;
   border: solid 2px rgba(106, 0, 255);
-  /* border: none; */
   border-radius: 4px;
-  /* background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%); */
   background: linear-gradient(to right, #8400ff 0%, #3d0077 85%, #0d002e 100%);
   color: #ffffff;
   font-weight: 500;
@@ -44,15 +49,19 @@
   cursor: pointer;
 }
 
+.input {
+  background-color: rgba(255, 255, 255, 1);
+}
+
 fieldset {
   margin: 4px;
   padding: 1em;
-  font-size: 16;
+  font-size: 16px;
 }
 
 input {
   width: 100%;
-  height: 48px;
+  height: 35px;
   margin: 4px 0 6px 6px;
 }
 

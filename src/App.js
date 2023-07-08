@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Form />
       <br />
-      {/* <TableContainer /> */}
+      <TableContainer />
       <Footer />
     </div>
   );

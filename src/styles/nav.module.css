@@ -1,5 +1,12 @@
 /* nav.module.css */
 
+/* @media (min-width: 600px) {
+  .loginFormWrapper {
+    position: absolute;
+    margin: 90px -90px !important;
+  }
+} */
+
 .navContainer {
   display: flex;
   flex-direction: column;
@@ -17,7 +24,6 @@
   gap: 20px;
   /* border-left: solid 2px white; */
   height: 100%;
-  flex-grow: 1;
 }
 
 .navMenu > li {
@@ -42,12 +48,12 @@
 
 .loginFormWrapper {
   position: absolute;
-  margin: 90px -50px;
+  margin: 90px 0px;
 }
 
 .userWelcome {
-
   margin: 15px 25px auto 20px;
   align-self: center;
+  justify-self: center;
 }
 
