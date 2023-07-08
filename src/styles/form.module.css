@@ -1,5 +1,10 @@
 /*  from.module.css */
 
+@media (width: 600px) {
+  .formRow {
+    width: 50%;
+  }
+}
 
 input, textarea {
     margin: 5px;
@@ -40,6 +45,7 @@ input, textarea {
   .formRow {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     flex: 1 1 auto;
     gap: 10px;
   }
@@ -62,6 +68,7 @@ input, textarea {
     border: 2px solid #8400ff5b;
     font-size: 16px;
     color: #4d4d4d;
+    background-color: #ffffff;
   }
   
   label {
@@ -71,7 +78,7 @@ input, textarea {
   
   .formButton {
     margin-top: 30px;
-    width: 97%;
+    width: 99%;
     height: 48px;
     align-self: center;
     border: none;
