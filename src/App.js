@@ -1,7 +1,7 @@
 import './App.css';
 import Form from './components/Form';
 import Header from './components/Header';
-import TableContainer from './components/TableContainer';
+import CustomersTable from './components/CustomersTable';
 import Footer from './components/Footer';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Form />
       <br />
-      <TableContainer />
+      <CustomersTable />
       <Footer />
     </div>
   );

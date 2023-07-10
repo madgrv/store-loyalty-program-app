@@ -9,43 +9,66 @@ export default function CustomersTable() {
   const [searchCriteria, setSearchCriteria] = useState('name');
   const [filteredData, setFilteredData] = useState(data); // New state for filtered data
 
-  // Event handler for the 'sort by' selector
-  const handleSortByChange = (event) => {
-    setSortBy(event.target.value);
-    // Pass filteredData as well
-    sortByCriteria(event.target.value, filteredData); 
-  };
+
+
+  // // Event handler for the 'sort by' selector
+  // const handleSortByChange = (event) => {
+  //   setSortBy(event.target.value);
+  //   // Pass filteredData as well
+  //   sortByCriteria(event.target.value, filteredData); 
+  // };
 
   // Function to sort the displayed data
-  const sortByCriteria = (criteria, dataToSort) => { // Accept data as a parameter
+  const sortByCriteria = (criteria, direction) => {
     let sortedByCriteria;
 
     switch (criteria) {
       case 'name':
-        sortedByCriteria = [...dataToSort].sort((a, b) =>
+        sortedByCriteria = [...filteredData].sort((a, b) =>
           a.firstName.localeCompare(b.firstName)
         );
         break;
       case 'time':
-        sortedByCriteria = [...dataToSort].sort((a, b) => a.id - b.id);
+        sortedByCriteria = [...filteredData].sort((a, b) => a.id - b.id);
         break;
       case 'book':
-        sortedByCriteria = [...dataToSort].sort((a, b) =>
+        sortedByCriteria = [...filteredData].sort((a, b) =>
           a.bookBought.localeCompare(b.bookBought)
         );
         break;
       case 'rating':
-        sortedByCriteria = [...dataToSort].sort((a, b) =>
+        sortedByCriteria = [...filteredData].sort((a, b) =>
           a.starRating.localeCompare(b.starRating)
         );
         break;
-      default:
-        sortedByCriteria = dataToSort;
+      case 'email':
+        sortedByCriteria = [...filteredData].sort((a, b) =>
+          a.email.localeCompare(b.email)
+        );
         break;
+      default:
+        sortedByCriteria = filteredData;
+        break;
+    }
+
+    if (direction === 'desc') {
+      sortedByCriteria.reverse();
     }
 
     setSortedData(sortedByCriteria);
   };
+
+  // Event handler for the sort by column click
+  const handleSortByColumn = (criteria) => {
+    const newSortDirection = sortBy === `${criteria}-asc` ? 'desc' : 'asc';
+
+    sortByCriteria(criteria, newSortDirection);
+    setSortBy(`${criteria}-${newSortDirection}`);
+    
+  };
+  
+
+
 
   // Event handler for the search term input
   const handleSearchTermChange = (event) => {
@@ -88,27 +111,22 @@ export default function CustomersTable() {
     applySearchCriteria();
   }, [searchTerm, searchCriteria]);
 
+
+
   return (
     <div className={styles.customersTable}>
       <h2>Customers Table</h2>
       <div className={styles.actionBar}>
         <div className={styles.sortingSelector}>
-          <label htmlFor="sortBy">Sort By:</label>
-          <select id="sortBy" value={sortBy} onChange={handleSortByChange}>
-            <option value="time">Time</option>
-            <option value="name">Name</option>
-            <option value="book">Book</option>
-            <option value="rating">Rating</option>
-          </select>
         </div>
         <div className={styles.searchInput}>
           <select
             value={searchCriteria}
             onChange={handleSearchCriteriaChange}
           >
-            <option value="name">Name</option>
-            <option value="bookBought">Book</option>
-            <option value="email">Email</option>
+            <option value="name">Search by name</option>
+            <option value="bookBought">Search by book</option>
+            <option value="email">Search by email</option>
           </select>
           <input
             type="text"
@@ -121,14 +139,30 @@ export default function CustomersTable() {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Book</th>
+            <th
+              onClick={() => handleSortByColumn('time')}>
+                Date {sortBy === 'time-asc' && <span> ↓</span>}
+                    {sortBy === 'time-desc' && <span> ↑</span>} 
+            </th>
+            <th
+              onClick={() => handleSortByColumn('name')}>
+                Name {sortBy === 'name-asc' && <span> ↓</span>}
+                    {sortBy === 'name-desc' && <span> ↑</span>} 
+            </th>
+            <th onClick={() => handleSortByColumn('email')}>
+              Email {sortBy === 'email-asc' && <span> ↓</span>}
+                    {sortBy === 'email-desc' && <span> ↑</span>}
+              </th>
+            <th onClick={() => handleSortByColumn('book')}>
+              Book {sortBy === 'book-asc' && <span> ↓</span>}
+                  {sortBy === 'book-desc' && <span> ↑</span>}
+              </th>
           </tr>
         </thead>
         <tbody>
           {sortedData.map((customer) => (
             <tr key={customer.id}>
+              <td>{new Date(customer.id).toLocaleDateString()}</td>
               <td>{`${customer.firstName} ${customer.lastName}`}</td>
               <td>{customer.email}</td>
               <td>{customer.bookBought}</td>
