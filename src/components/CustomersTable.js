@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from '../styles/customersTable.module.css';
-import data from '../Data.json';
+// import data from '../Data.json';
 
 export default function CustomersTable() {
-  const [sortedData, setSortedData] = useState(data);
+  const [sortedData, setSortedData] = useState([]);
   const [sortBy, setSortBy] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [searchCriteria, setSearchCriteria] = useState('name');
-  const [filteredData, setFilteredData] = useState(data); // New state for filtered data
+  const [filteredData, setFilteredData] = useState([]); // New state for filtered data
 
 
+  // Call the fetchData function on component mount to display in the table
+  useEffect(() => {
+    fetchData();
+  }, [])
 
-  // // Event handler for the 'sort by' selector
-  // const handleSortByChange = (event) => {
-  //   setSortBy(event.target.value);
-  //   // Pass filteredData as well
-  //   sortByCriteria(event.target.value, filteredData); 
-  // };
+  // Create a fetch request function
+  const fetchData = async() => {
+    try {
+      const response = await axios.get('/api/customers')
+      const customers = response.data
+      setSortedData(customers)
+      setFilteredData(customers)
+
+    } catch(error) {
+      console.error(error)
+    }
+  }
+
 
   // Function to sort the displayed data
   const sortByCriteria = (criteria, direction) => {
@@ -82,7 +94,7 @@ export default function CustomersTable() {
 
   // Apply search criteria to filter the data
   const applySearchCriteria = () => {
-    const filteredData = data.filter((customer) => {
+    const filteredData = sortedData.filter((customer) => {
       // Make it case insensitive by converting to lower case
       const searchTermLowerCase = searchTerm.toLowerCase();
       const customerValue = customer[searchCriteria]?.toLowerCase() || '';

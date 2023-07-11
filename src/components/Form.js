@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import axios from 'axios'
 import styles from '../styles/form.module.css'
 
 export default function Form() {
     // create empty array to store form object data
     const [dataList, setDataList] = React.useState([]);
+
     // Set initial form state
     const [formData, setFormData] = React.useState(
         {
@@ -19,8 +21,41 @@ export default function Form() {
         }
     )
     
-    console.log(formData) // for testing
-    
+
+
+    // // A function to make a GET request to the server
+    // const fetchCustomers = async () => {
+    //     try {
+    //       const response = await axios.get('/api/customers');
+    //       const customers = response.data;
+    //       setSortedData(customers);
+    //     } catch (error) {
+    //       console.error(error);
+    //       // Handle error
+    //     }
+    // };
+
+    // // Call the fetchCustomers function when the component mounts
+    // useEffect(() => {
+    //     fetchCustomers();
+    // }, []);
+
+
+
+    // A function to make the POST request
+    const addCustomer = async (customer) => {
+        try {
+          await axios.post('/api/customers', customer);
+        //   fetchCustomers(); // Refresh customer data after successful addition
+          window.alert('Customer added successfully.');
+        } catch (error) {
+          console.error(error);
+        }
+    };
+      
+      
+
+    // Update form state on change
     function handleChange(event) {
         const {name, value} = event.target
         //deconstructing the event.target object
@@ -31,6 +66,8 @@ export default function Form() {
             }
         })
     }
+
+
 
     function handleSubmit(event) {
         event.preventDefault(); // Prevents the default form submission behavior
@@ -49,15 +86,13 @@ export default function Form() {
         };
     
         // Send the formDataObject to the API
-        // You can use fetch or any other library for making API requests
-    
-        // console.log(formDataObject);
+        addCustomer(formDataObject);    
         
         // Add the new data to the array
         setDataList([...dataList, formDataObject]);
         window.alert("Submitted successfully")
 
-        console.log(dataList)
+        // console.log(dataList)
 
         // Reset the form input fields by updating the state
         setFormData({
