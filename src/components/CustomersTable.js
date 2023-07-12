@@ -10,25 +10,22 @@ export default function CustomersTable() {
   const [searchCriteria, setSearchCriteria] = useState('name');
   const [filteredData, setFilteredData] = useState([]); // New state for filtered data
 
-
   // Call the fetchData function on component mount to display in the table
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
 
   // Create a fetch request function
-  const fetchData = async() => {
+  const fetchData = async () => {
     try {
-      const response = await axios.get('/api/customers')
-      const customers = response.data
-      setSortedData(customers)
-      setFilteredData(customers)
-
-    } catch(error) {
-      console.error(error)
+      const response = await axios.get('http://localhost:8000/api/customers');
+      const customers = response.data;
+      setSortedData(customers);
+      setFilteredData(customers);
+    } catch (error) {
+      console.error(error);
     }
-  }
-
+  };
 
   // Function to sort the displayed data
   const sortByCriteria = (criteria, direction) => {
@@ -76,11 +73,7 @@ export default function CustomersTable() {
 
     sortByCriteria(criteria, newSortDirection);
     setSortBy(`${criteria}-${newSortDirection}`);
-    
   };
-  
-
-
 
   // Event handler for the search term input
   const handleSearchTermChange = (event) => {
@@ -108,11 +101,11 @@ export default function CustomersTable() {
     });
 
     // Update the filtered data state
-    setFilteredData(filteredData); 
+    setFilteredData(filteredData);
 
     if (sortBy) {
       // Sort the filtered data
-      sortByCriteria(sortBy, filteredData); 
+      sortByCriteria(sortBy, filteredData);
     } else {
       setSortedData(filteredData);
     }
@@ -123,26 +116,20 @@ export default function CustomersTable() {
     applySearchCriteria();
   }, [searchTerm, searchCriteria]);
 
-
-
   return (
     <div className={styles.customersTable}>
       <h2>Customers Table</h2>
       <div className={styles.actionBar}>
-        <div className={styles.sortingSelector}>
-        </div>
+        <div className={styles.sortingSelector}></div>
         <div className={styles.searchInput}>
-          <select
-            value={searchCriteria}
-            onChange={handleSearchCriteriaChange}
-          >
-            <option value="name">Search by name</option>
-            <option value="bookBought">Search by book</option>
-            <option value="email">Search by email</option>
+          <select value={searchCriteria} onChange={handleSearchCriteriaChange}>
+            <option value='name'>Search by name</option>
+            <option value='bookBought'>Search by book</option>
+            <option value='email'>Search by email</option>
           </select>
           <input
-            type="text"
-            placeholder="Search..."
+            type='text'
+            placeholder='Search...'
             value={searchTerm}
             onChange={handleSearchTermChange}
           />
@@ -151,24 +138,22 @@ export default function CustomersTable() {
       <table>
         <thead>
           <tr>
-            <th
-              onClick={() => handleSortByColumn('time')}>
-                Date {sortBy === 'time-asc' && <span> ↓</span>}
-                    {sortBy === 'time-desc' && <span> ↑</span>} 
+            <th onClick={() => handleSortByColumn('time')}>
+              Date {sortBy === 'time-asc' && <span> ↓</span>}
+              {sortBy === 'time-desc' && <span> ↑</span>}
             </th>
-            <th
-              onClick={() => handleSortByColumn('name')}>
-                Name {sortBy === 'name-asc' && <span> ↓</span>}
-                    {sortBy === 'name-desc' && <span> ↑</span>} 
+            <th onClick={() => handleSortByColumn('name')}>
+              Name {sortBy === 'name-asc' && <span> ↓</span>}
+              {sortBy === 'name-desc' && <span> ↑</span>}
             </th>
             <th onClick={() => handleSortByColumn('email')}>
               Email {sortBy === 'email-asc' && <span> ↓</span>}
-                    {sortBy === 'email-desc' && <span> ↑</span>}
-              </th>
+              {sortBy === 'email-desc' && <span> ↑</span>}
+            </th>
             <th onClick={() => handleSortByColumn('book')}>
               Book {sortBy === 'book-asc' && <span> ↓</span>}
-                  {sortBy === 'book-desc' && <span> ↑</span>}
-              </th>
+              {sortBy === 'book-desc' && <span> ↑</span>}
+            </th>
           </tr>
         </thead>
         <tbody>
