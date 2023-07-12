@@ -132,7 +132,7 @@ export default function Form() {
                     </fieldset>
                     <fieldset>
                         <legend className={styles.legend}>Book info</legend>
-                        <div className={styles.formRow}>    
+                        <div className={`${styles.formRow} ${styles.doubleContainer}`} >    
                             <input
                                 type="text"
                                 placeholder="Last book bought"
