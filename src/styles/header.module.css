@@ -16,6 +16,7 @@
 }
 
 .headerTitle {
+  display: flex;
   text-align: left;
 }
   
