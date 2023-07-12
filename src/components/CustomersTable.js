@@ -10,10 +10,7 @@ export default function CustomersTable() {
   const [searchCriteria, setSearchCriteria] = useState('name');
   const [filteredData, setFilteredData] = useState([]); // New state for filtered data
 
-  // Call the fetchData function on component mount to display in the table
-  useEffect(() => {
-    fetchData();
-  }, []);
+  
 
   // Create a fetch request function
   const fetchData = async () => {
@@ -26,6 +23,11 @@ export default function CustomersTable() {
       console.error(error);
     }
   };
+
+  // Call the fetchData function on component mount to display in the table
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // Function to sort the displayed data
   const sortByCriteria = (criteria, direction) => {

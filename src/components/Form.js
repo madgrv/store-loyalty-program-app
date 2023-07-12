@@ -88,8 +88,8 @@ export default function Form() {
         // Send the formDataObject to the API
         addCustomer(formDataObject);    
         
-        // Add the new data to the array
-        setDataList([...dataList, formDataObject]);
+        // // Add the new data to the array
+        // setDataList([...dataList, formDataObject]);
         window.alert("Submitted successfully")
 
         // console.log(dataList)
@@ -108,92 +108,94 @@ export default function Form() {
       }
 
     return (
-        <div>
+        <div className={styles.formContainer}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <fieldset>
-                    <legend className={styles.legend}>Customer details</legend>
-                    <div className={styles.formRow}>
-                        <input
-                            type="text"
-                            placeholder="First Name"
-                            onChange={handleChange}
-                            name="firstName"
-                            value={formData.firstName} //receives value from the changed state of formData
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Last Name"
-                            onChange={handleChange}
-                            name="lastName"
-                            value={formData.lastName}
-                            required
-                        />
-                    </div>
-                    <div className={styles.formRow}>    
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            onChange={handleChange}
-                            name="email"
-                            value={formData.email}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="phone"
-                            onChange={handleChange}
-                            name="phone"
-                            value={formData.phone}
-                        />
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend className={styles.legend}>Book info</legend>
-                    <div className={styles.formRow}>    
-                        <input
-                            type="text"
-                            placeholder="Last book bought"
-                            onChange={handleChange}
-                            name="bookBought"
-                            value={formData.bookBought}
-                            required
-                        />
-                        <label htmlFor="starRating">Rating:</label>
-                        <select 
-                            id="starRating"
-                            name="starRating"
-                            onChange={handleChange}
-                            value={formData.starRating}
-                            required
-                        >Rating
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div className={styles.formRow}>
-                        <input
-                            type="text"
-                            placeholder="Book of choice"
-                            onChange={handleChange}
-                            name="bookOfChoice"
-                            value={formData.bookOfChoice}
-                            required
-                        />
-                    </div>
-                    <div className={styles.formRow}>
-                        <textarea 
-                            rows="4"
-                            placeholder="Add your comments here"
-                            onChange={handleChange}
-                            name="comments"
-                            value={formData.comments}
-                        />
-                    </div>
-                </fieldset>
+                <div className={styles.window}>
+                    <fieldset>
+                        <legend className={styles.legend}>Customer details</legend>
+                        <div className={styles.formRow}>
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                onChange={handleChange}
+                                name="firstName"
+                                value={formData.firstName} //receives value from the changed state of formData
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                onChange={handleChange}
+                                name="lastName"
+                                value={formData.lastName}
+                                required
+                            />
+                        </div>
+                        <div className={styles.formRow}>    
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                onChange={handleChange}
+                                name="email"
+                                value={formData.email}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="phone"
+                                onChange={handleChange}
+                                name="phone"
+                                value={formData.phone}
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend className={styles.legend}>Book info</legend>
+                        <div className={styles.formRow}>    
+                            <input
+                                type="text"
+                                placeholder="Last book bought"
+                                onChange={handleChange}
+                                name="bookBought"
+                                value={formData.bookBought}
+                                required
+                            />
+                            <label htmlFor="starRating">Rating:</label>
+                            <select 
+                                id="starRating"
+                                name="starRating"
+                                onChange={handleChange}
+                                value={formData.starRating}
+                                required
+                            >Rating
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div className={styles.formRow}>
+                            <input
+                                type="text"
+                                placeholder="Book of choice"
+                                onChange={handleChange}
+                                name="bookOfChoice"
+                                value={formData.bookOfChoice}
+                                required
+                            />
+                        </div>
+                        <div className={styles.formRow}>
+                            <textarea 
+                                rows="4"
+                                placeholder="Add your comments here"
+                                onChange={handleChange}
+                                name="comments"
+                                value={formData.comments}
+                            />
+                        </div>
+                    </fieldset>
+                </div>
                 <button type="submit" className={styles.formButton}>Submit</button>
             </form>
         </div>
