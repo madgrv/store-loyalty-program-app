@@ -9,23 +9,26 @@
   border: none;
 }
 
-.loginForm {
+/* .loginForm {
   padding: 0;
   margin: 0;
   background: #ffffff;
-  border: 3px solid #19191913;
+  border: 3px solid rgba(106, 0, 255, 0.566);
+  border-radius: 5px;
   color: #6b6b6b;
   font-size: 0.8rem;
   font-weight: 500;
-}
+  box-shadow: 0 14px 20px 0 rgba(106, 0, 255, 0.287);
+} */
 
 .loginForm {
-  background-color: #19191942;
+  background-color: rgba(255, 255, 255, 0.309);
   backdrop-filter: blur(22px);
+  color: #6b6b6b;
   font-size: 0.8rem;
   font-weight: 500;
-  border-radius: 8px;
-  box-shadow: 0 2px 20px 0 rgba(142, 142, 142, 0.26), 0 4px 40px 0 rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 14px 25px 5px rgba(106, 0, 255, 0.377);
 }
 
 .inputField {
@@ -37,7 +40,7 @@
   width: 100%;
   height: 40px;
   margin: 8px 0 0 0;
-  border: none;
+  border: solid 2px rgba(106, 0, 255);
   border-radius: 4px;
   background: linear-gradient(to right, #8400ff 0%, #3d0077 85%, #0d002e 100%);
   color: #ffffff;
@@ -47,8 +50,7 @@
 }
 
 .input {
-  background-color: #212121;
-  border: none;
+  background-color: rgb(255, 255, 255);
 }
 
 fieldset {

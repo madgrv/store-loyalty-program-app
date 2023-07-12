@@ -10,12 +10,12 @@ export default function CustomersTable() {
   const [searchCriteria, setSearchCriteria] = useState('name');
   const [filteredData, setFilteredData] = useState([]); // New state for filtered data
 
-  
+  const MAIN_URL = "localhost:8000"
 
   // Create a fetch request function
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/customers');
+      const response = await axios.get(`http://${MAIN_URL}/api/customers`);
       const customers = response.data;
       setSortedData(customers);
       setFilteredData(customers);

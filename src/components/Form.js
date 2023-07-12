@@ -5,6 +5,7 @@ import styles from '../styles/form.module.css'
 export default function Form() {
     // create empty array to store form object data
     const [dataList, setDataList] = React.useState([]);
+    const MAIN_URL = "localhost:8000"
 
     // Set initial form state
     const [formData, setFormData] = React.useState(
@@ -23,31 +24,11 @@ export default function Form() {
     
 
 
-    // // A function to make a GET request to the server
-    // const fetchCustomers = async () => {
-    //     try {
-    //       const response = await axios.get('/api/customers');
-    //       const customers = response.data;
-    //       setSortedData(customers);
-    //     } catch (error) {
-    //       console.error(error);
-    //       // Handle error
-    //     }
-    // };
-
-    // // Call the fetchCustomers function when the component mounts
-    // useEffect(() => {
-    //     fetchCustomers();
-    // }, []);
-
-
-
     // A function to make the POST request
     const addCustomer = async (customer) => {
         try {
-          await axios.post('/api/customers', customer);
-        //   fetchCustomers(); // Refresh customer data after successful addition
-          window.alert('Customer added successfully.');
+          await axios.post(`http://${MAIN_URL}/api/customers`, customer);
+        //   window.alert('Customer added successfully.');
         } catch (error) {
           console.error(error);
         }
