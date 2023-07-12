@@ -40,15 +40,39 @@
   cursor: pointer;
 }
 
+.actionBarContainer {
+  align-content: center;
+}
+
 .actionBar {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: center;
+  justify-content: center;
   align-content: space-between;
 }
 
-.sortingSelector {
+.actionBar select {
+  width: auto;
+  padding: 10px;
+  min-height: 38px;
+  border: none;
+  border-radius: 4px;
+  background-color: #c8c8c8;
+  color: #333;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.actionBar Input {
+  border: none;
+  background-color: #333;
+}
+
+/* .sortingSelector {
   margin: 10px;
   height: 48px;
-}
+} */
 

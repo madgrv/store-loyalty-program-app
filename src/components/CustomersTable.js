@@ -121,13 +121,12 @@ export default function CustomersTable() {
   return (
     <div className={styles.customersTable}>
       <h2>Customers Table</h2>
-      <div className={styles.actionBar}>
-        <div className={styles.sortingSelector}></div>
-        <div className={styles.searchInput}>
+      <div className={styles.actionBarContainer}>
+        <div className={styles.actionBar}>
           <select value={searchCriteria} onChange={handleSearchCriteriaChange}>
-            <option value='name'>Search by name</option>
-            <option value='bookBought'>Search by book</option>
-            <option value='email'>Search by email</option>
+            <option value='name'>Search by name ↓</option>
+            <option value='bookBought'>Search by book ↓</option>
+            <option value='email'>Search by email ↓</option>
           </select>
           <input
             type='text'
