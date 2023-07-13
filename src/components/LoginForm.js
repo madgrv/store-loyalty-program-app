@@ -57,7 +57,7 @@ export default function LoginFormI({handleLogin}) {
                             className={Styles.input} 
                             type='text'
                             id='username'
-                            placeholder='User name'
+                            placeholder='Username'
                             value={username}
                             required
                             onChange={handleUsernameChange}                        />
@@ -76,6 +76,7 @@ export default function LoginFormI({handleLogin}) {
                     </div>
                     <button className={Styles.button}>Login</button>
                 </fieldset>
+                    <a href='' className={Styles.link}>Login help</a>
             </form>
         </div>
     )

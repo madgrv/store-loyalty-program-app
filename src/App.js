@@ -1,5 +1,7 @@
 import './App.css';
 import styles from './App.css'
+import 'typeface-cormorant-garamond';
+import { GoogleFont } from 'react-google-font-loader';
 import Form from './components/Form';
 import Header from './components/Header';
 import CustomersTable from './components/CustomersTable';

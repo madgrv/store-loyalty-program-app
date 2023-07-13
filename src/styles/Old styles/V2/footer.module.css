@@ -1,13 +1,11 @@
 .footer {
     margin-top: 5rem;
-    background-color: #e1dacf;
-    color: #2c120f;
-    font-size: 20px;
+    color: #696969;
     min-height: 3rem;
     padding: 10px;
     /* background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%); */
     /* box-shadow: 0 -5px 20px 0 rgb(106, 0, 255), 0 -10px 20px 0 rgb(144, 0, 255), 0 -3px 10px 0 rgb(0, 255, 187);   */
-    /* box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.468); */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.468);
 }
 
 .title {

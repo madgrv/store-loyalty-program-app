@@ -1,14 +1,7 @@
 /* customersTable.module.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
 .customersTable {
-  color: #2c120f;
-  font-size: 18px;
-  background-color: #e1dacf;
-  border: 1px solid #9b9488;
-  border-radius: 8px;
-  padding: 10px;
+  color: #333;
   margin-top: 20px;
   margin: auto;
   display: flex;
@@ -18,16 +11,17 @@
   width: 90%;
   height: auto;
   overflow: auto;
+  /* resize: vertical; */
   padding: 10px;
+  border: 2px solid #cccccc85;
   border-radius: 5px;
 }
 
 .customersTable h2 {
-  color: #2c120f;
+  color: #333;
 }
 
 .customersTable table {
-  color: #2c120f;
   width: 100%;
   border-collapse: collapse;
   text-align: left;
@@ -41,7 +35,7 @@
 }
 
 .customersTable th {
-  background-color: #f3ebdf;
+  background-color: #f5f5f5;
   text-align: left;
   cursor: pointer;
 }
@@ -52,22 +46,20 @@
 
 .actionBar {
   display: flex;
+  /* flex-direction: row; */
   align-items: center;
   justify-content: center;
   align-content: space-between;
-  margin: 10px;
 }
 
 .actionBar select {
   width: auto;
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
   min-height: 34px;
   border: none;
   border-radius: 4px;
-  background-color: #858534;
-  color: #ffffff;
-  font-size: 18px;
+  background-color: #c8c8c8;
+  color: #333;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -75,12 +67,8 @@
 }
 
 .actionBar Input {
-  font-family: Special Elite;
-  color: #2c120f;
-  font-size: 16px;
-  font-weight: 700;
   border: none;
-  background-color: #dacbb3;
+  background-color: #333;
 }
 
 /* .sortingSelector {

@@ -29,9 +29,9 @@ export default function Nav() {
         <div className={styles.navContainer}>
             <nav className={styles.nav}>
                 <ul className={styles.navMenu}>
-                    {isLoggedIn ? <p className={styles.userWelcome}>Welcome, {userName}</p>
+                    {isLoggedIn ? <p className={styles.userWelcome}>Welcome {userName}!</p>
                         :
-                        <p className={styles.userWelcome}>Please login</p>
+                        <p className={styles.userWelcome}>Hello stranger...</p>
                     }
                     {/* <li>Home</li>
                     <li>Back</li> */}

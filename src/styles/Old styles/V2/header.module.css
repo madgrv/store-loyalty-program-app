@@ -1,0 +1,32 @@
+/* header.module.css */
+
+.header {
+  color: rgb(111, 111, 111);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 10px 30px 10px 20px;
+  /* background: linear-gradient(to right, #0d002e -8%, #8400ff 40%, #3d0077 90%, #0d002e 105%); */
+  /* box-shadow: 0 10px 20px 0 rgb(106, 0, 255), 0 15px 20px 0 rgb(144, 0, 255), 0 3px 10px 0 rgb(0, 255, 187); */
+  /* adds multiple shadows */
+  /* backdrop-filter: blur(8px); */
+  /* opacity: 0.9; */
+}
+
+.headerTitle {
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+}
+  
+h1 {
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
+h4 {
+  margin: 0 atuo 10px auto;
+  text-align: center;
+}
