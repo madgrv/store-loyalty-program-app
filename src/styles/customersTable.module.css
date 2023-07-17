@@ -33,11 +33,35 @@
   text-align: left;
 }
 
-.customersTable th,
+.customersTable th {
+  padding: 4px;
+  min-width: 45px;
+}
 .customersTable td {
   padding: 8px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #72727221;
   height: 40px;
+}
+
+.edit,
+.delete {
+  text-align: center;
+  cursor: auto !important;
+}
+
+.deleteButton {
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  transition: 0.1s;
+}
+
+.deleteButton:hover {
+  background-color: #ef341b;
+}
+
+.deleteButton:active {
+  background-color: #ce2e19;
 }
 
 .customersTable th {

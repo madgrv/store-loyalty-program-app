@@ -1,10 +1,45 @@
 /*  from.module.css */
 
-/* @media (min-width: 600px) {
+@media (min-width: 600px) {
   .formRow {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-} */
+
+  .formRow input,
+  .formRow textarea {
+    flex: 1;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .window {
+    display: flex;
+    flex: 1;
+    min-width: 850px;
+    margin: 0 auto;
+  }
+
+  .form {
+    min-width: 900px;
+  }
+
+  .formButton {
+    min-width: 800px;
+  }
+
+  .customerDetails,
+  .bookInfo {
+    flex: 1;
+  }
+
+  .bookInfo {
+    margin-left: auto;
+  }
+  
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
@@ -128,16 +163,16 @@ label {
   font-size: 20px;
   font-weight: 700;
   color: 2c120f;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .formButton:hover {
   cursor: pointer;
-  box-shadow: 0 3px 0px 1px #67593fe5;
-  transform: translateY(-3px);
+  box-shadow: 0 3px 0px 0px #67593f35;
+  transform: translateY(-1.5px);
 }
 
 .formButton:active {
   transform: perspective(5);
-  box-shadow: 0 0px 0px 1px #67593f;
+  box-shadow: 0 1px 0px 0px #67593f35;
 }

@@ -4,7 +4,7 @@ import styles from '../styles/form.module.css'
 
 export default function Form() {
     // create empty array to store form object data
-    const [dataList, setDataList] = React.useState([]);
+    // const [dataList, setDataList] = React.useState([]);
     const MAIN_URL = "localhost:8000"
 
     // Set initial form state
@@ -93,7 +93,7 @@ export default function Form() {
             <div className={styles.blurLayer}>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.window}>
-                        <fieldset>
+                        <fieldset className={`${styles.customerDetails} ${styles.formSection}`}>
                             <legend className={styles.legend}>Customer details</legend>
                             <div className={styles.formRow}>
                                 <input
@@ -131,7 +131,7 @@ export default function Form() {
                                 />
                             </div>
                         </fieldset>
-                        <fieldset>
+                        <fieldset className={`${styles.bookInfo} ${styles.formSection}`}>
                             <legend className={styles.legend}>Book info</legend>
                             <div className={`${styles.formRow} ${styles.doubleContainer}`} >    
                                 <input
@@ -177,8 +177,8 @@ export default function Form() {
                                 />
                             </div>
                         </fieldset>
-                    <button type="submit" className={styles.formButton}>Submit</button>
                     </div>
+                    <button type="submit" className={styles.formButton}>Submit</button>
                 </form>
             </div>
         </div>

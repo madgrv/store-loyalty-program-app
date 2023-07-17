@@ -113,6 +113,12 @@ export default function CustomersTable() {
     }
   };
 
+
+  // handler for the delete entry function
+  const handleDelete = () => {
+
+  }
+
   // Apply search criteria when searchTerm or searchCriteria change
   useEffect(() => {
     applySearchCriteria();
@@ -155,16 +161,28 @@ export default function CustomersTable() {
               Book {sortBy === 'book-asc' && <span> ↓</span>}
               {sortBy === 'book-desc' && <span> ↑</span>}
             </th>
+            {/* <th className={styles.edit} onClick={() => handleEdit()}>
+              edit
+            </th> */}
+            <th className={styles.delete} onClick={() => handleDelete()}>
+              Delete
+            </th>
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((customer) => (
-            <tr key={customer.id}>
-              <td>{new Date(customer.id).toLocaleDateString()}</td>
-              <td>{`${customer.firstName} ${customer.lastName}`}</td>
-              <td>{customer.email}</td>
-              <td>{customer.bookBought}</td>
-            </tr>
+            {sortedData.map((customer) => (
+              <tr key={customer.id}>
+                <td>{new Date(customer.id).toLocaleDateString()}</td>
+                <td>{`${customer.firstName} ${customer.lastName}`}</td>
+                <td>{customer.email}</td>
+                <td>{customer.bookBought}</td>
+                {/* <td>✏️</td> */}
+                <td className={styles.deleteButton}>
+                  <span  role="img" aria-label="delete">
+                    🗑
+                  </span>
+                </td>
+              </tr>
           ))}
         </tbody>
       </table>
