@@ -45,7 +45,7 @@
 
 .edit,
 .delete {
-  text-align: center;
+  text-align: center !important;
   cursor: auto !important;
 }
 

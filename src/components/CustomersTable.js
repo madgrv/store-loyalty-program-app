@@ -24,6 +24,7 @@ export default function CustomersTable() {
     }
   };
 
+
   // Call the fetchData function on component mount to display in the table
   useEffect(() => {
     fetchData();
