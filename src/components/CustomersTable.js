@@ -130,14 +130,19 @@ export default function CustomersTable() {
       <h2>Customers Table</h2>
       <div className={styles.actionBarContainer}>
         <div className={styles.actionBar}>
-          <select value={searchCriteria} onChange={handleSearchCriteriaChange}>
-            <option value='name'>Search by name ↓</option>
-            <option value='bookBought'>Search by book ↓</option>
-            <option value='email'>Search by email ↓</option>
+          <label htmlFor="searchCriteria">Search by:</label>
+          <select
+            id="searchCriteria"
+            value={searchCriteria}
+            onChange={handleSearchCriteriaChange}
+          >
+            <option value="name">Name</option>
+            <option value="bookBought">Book</option>
+            <option value="email">Email</option>
           </select>
           <input
-            type='text'
-            placeholder='Search...'
+            type="text"
+            placeholder="Search..."
             value={searchTerm}
             onChange={handleSearchTermChange}
           />
@@ -162,28 +167,24 @@ export default function CustomersTable() {
               Book {sortBy === 'book-asc' && <span> ↓</span>}
               {sortBy === 'book-desc' && <span> ↑</span>}
             </th>
-            {/* <th className={styles.edit} onClick={() => handleEdit()}>
-              edit
-            </th> */}
             <th className={styles.delete} onClick={() => handleDelete()}>
               Delete
             </th>
           </tr>
         </thead>
         <tbody>
-            {sortedData.map((customer) => (
-              <tr key={customer.id}>
-                <td>{new Date(customer.id).toLocaleDateString()}</td>
-                <td>{`${customer.firstName} ${customer.lastName}`}</td>
-                <td>{customer.email}</td>
-                <td>{customer.bookBought}</td>
-                {/* <td>✏️</td> */}
-                <td className={styles.deleteButton}>
-                  <span  role="img" aria-label="delete">
-                    🗑
-                  </span>
-                </td>
-              </tr>
+          {sortedData.map((customer) => (
+            <tr key={customer.id}>
+              <td>{new Date(customer.id).toLocaleDateString()}</td>
+              <td>{`${customer.firstName} ${customer.lastName}`}</td>
+              <td>{customer.email}</td>
+              <td>{customer.bookBought}</td>
+              <td className={styles.deleteButton}>
+                <span role="img" aria-label="delete">
+                  🗑
+                </span>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

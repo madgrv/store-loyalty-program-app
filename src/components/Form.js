@@ -96,7 +96,6 @@ return (
             <fieldset className={`${styles.customerDetails} ${styles.formSection}`}>
               <legend className={styles.legend}>Customer details</legend>
               <div className={styles.formRow}>
-                <div className={styles.formLabel}>First Name:</div>
                 <input
                   type="text"
                   placeholder="First Name"
@@ -106,7 +105,6 @@ return (
                   aria-label="First Name"
                   required
                 />
-                <div className={styles.formLabel}>Last Name:</div>
                 <input
                   type="text"
                   placeholder="Last Name"
@@ -118,7 +116,6 @@ return (
                 />
               </div>
               <div className={styles.formRow}>
-                <div className={styles.formLabel}>Email:</div>
                 <input
                   type="email"
                   placeholder="Email"
@@ -128,7 +125,6 @@ return (
                   aria-label="Email"
                   required
                 />
-                <div className={styles.formLabel}>Phone:</div>
                 <input
                   type="text"
                   placeholder="Phone"
@@ -142,7 +138,6 @@ return (
             <fieldset className={`${styles.bookInfo} ${styles.formSection}`}>
               <legend className={styles.legend}>Book info</legend>
               <div className={`${styles.formRow} ${styles.doubleContainer}`}>
-                <div className={styles.formLabel}>Purchased book:</div>
                 <input
                   type="text"
                   placeholder="Purchased book"
@@ -169,7 +164,6 @@ return (
                 </select>
               </div>
               <div className={styles.formRow}>
-                <div className={styles.formLabel}>Book of choice:</div>
                 <input
                   type="text"
                   placeholder="Book of choice"
@@ -181,7 +175,6 @@ return (
                 />
               </div>
               <div className={styles.formRow}>
-                <div className={styles.formLabel}>Comments:</div>
                 <textarea
                   rows="4"
                   placeholder="Add your comments here"

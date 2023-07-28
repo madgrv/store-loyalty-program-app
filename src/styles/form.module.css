@@ -90,6 +90,8 @@ legend {
   margin: auto;
   max-width: 600px;
   padding: 40px;
+  justify-content: center;
+  align-content: center;
 }
 
 .window {
