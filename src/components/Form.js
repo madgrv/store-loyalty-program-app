@@ -88,99 +88,116 @@ export default function Form() {
         });
       }
 
-    return (
-        <div className={styles.formContainer}>
-            <div className={styles.blurLayer}>
-                <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.window}>
-                        <fieldset className={`${styles.customerDetails} ${styles.formSection}`}>
-                            <legend className={styles.legend}>Customer details</legend>
-                            <div className={styles.formRow}>
-                                <input
-                                    type="text"
-                                    placeholder="First Name"
-                                    onChange={handleChange}
-                                    name="firstName"
-                                    value={formData.firstName} //receives value from the changed state of formData
-                                    required
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Last Name"
-                                    onChange={handleChange}
-                                    name="lastName"
-                                    value={formData.lastName}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formRow}>    
-                                <input
-                                    type="email"
-                                    placeholder="Email"
-                                    onChange={handleChange}
-                                    name="email"
-                                    value={formData.email}
-                                    required
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="phone"
-                                    onChange={handleChange}
-                                    name="phone"
-                                    value={formData.phone}
-                                />
-                            </div>
-                        </fieldset>
-                        <fieldset className={`${styles.bookInfo} ${styles.formSection}`}>
-                            <legend className={styles.legend}>Book info</legend>
-                            <div className={`${styles.formRow} ${styles.doubleContainer}`} >    
-                                <input
-                                    type="text"
-                                    placeholder="Purchased book"
-                                    onChange={handleChange}
-                                    name="bookBought"
-                                    value={formData.bookBought}
-                                    required
-                                />
-                                <label htmlFor="starRating">Rating:</label>
-                                <select 
-                                    id="starRating"
-                                    name="starRating"
-                                    onChange={handleChange}
-                                    value={formData.starRating}
-                                    required
-                                >Rating
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div className={styles.formRow}>
-                                <input
-                                    type="text"
-                                    placeholder="Book of choice"
-                                    onChange={handleChange}
-                                    name="bookOfChoice"
-                                    value={formData.bookOfChoice}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formRow}>
-                                <textarea 
-                                    rows="4"
-                                    placeholder="Add your comments here"
-                                    onChange={handleChange}
-                                    name="comments"
-                                    value={formData.comments}
-                                />
-                            </div>
-                        </fieldset>
-                    </div>
-                    <button type="submit" className={styles.formButton}>Submit</button>
-                </form>
-            </div>
-        </div>
-    )
+return (
+    <div className={styles.formContainer}>
+      <div className={styles.blurLayer}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.window}>
+            <fieldset className={`${styles.customerDetails} ${styles.formSection}`}>
+              <legend className={styles.legend}>Customer details</legend>
+              <div className={styles.formRow}>
+                <div className={styles.formLabel}>First Name:</div>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  onChange={handleChange}
+                  name="firstName"
+                  value={formData.firstName}
+                  aria-label="First Name"
+                  required
+                />
+                <div className={styles.formLabel}>Last Name:</div>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  onChange={handleChange}
+                  name="lastName"
+                  value={formData.lastName}
+                  aria-label="Last Name"
+                  required
+                />
+              </div>
+              <div className={styles.formRow}>
+                <div className={styles.formLabel}>Email:</div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                  name="email"
+                  value={formData.email}
+                  aria-label="Email"
+                  required
+                />
+                <div className={styles.formLabel}>Phone:</div>
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  onChange={handleChange}
+                  name="phone"
+                  value={formData.phone}
+                  aria-label="Phone"
+                />
+              </div>
+            </fieldset>
+            <fieldset className={`${styles.bookInfo} ${styles.formSection}`}>
+              <legend className={styles.legend}>Book info</legend>
+              <div className={`${styles.formRow} ${styles.doubleContainer}`}>
+                <div className={styles.formLabel}>Purchased book:</div>
+                <input
+                  type="text"
+                  placeholder="Purchased book"
+                  onChange={handleChange}
+                  name="bookBought"
+                  value={formData.bookBought}
+                  aria-label="Purchased book"
+                  required
+                />
+                <div className={styles.formLabel}>Rating:</div>
+                <select
+                  name="starRating"
+                  onChange={handleChange}
+                  value={formData.starRating}
+                  aria-label="Rating"
+                  required
+                >
+                  <option value="" disabled>Select rating</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div className={styles.formRow}>
+                <div className={styles.formLabel}>Book of choice:</div>
+                <input
+                  type="text"
+                  placeholder="Book of choice"
+                  onChange={handleChange}
+                  name="bookOfChoice"
+                  value={formData.bookOfChoice}
+                  aria-label="Book of choice"
+                  required
+                />
+              </div>
+              <div className={styles.formRow}>
+                <div className={styles.formLabel}>Comments:</div>
+                <textarea
+                  rows="4"
+                  placeholder="Add your comments here"
+                  onChange={handleChange}
+                  name="comments"
+                  value={formData.comments}
+                  aria-label="Comments"
+                />
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" className={styles.formButton} aria-label="Submit form">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
